@@ -1,0 +1,39 @@
+{
+	"npm.binPath":"/usr/local/bin/npm",
+	"vetur.completion.autoImport":true,
+	"emmet.includeLanguages":{
+
+		"vue-html":"html",
+		"vue":"html"
+
+	},
+	"tsserver.reportStyleChecksAsWarnings":false,
+	"typescript.showUnused":false,
+	"typescript.validate.enable":false,
+	"typescript.suggest.paths":false,
+	"javascript.showUnused":false,
+	"javascript.suggest.paths":false,
+	"javascript.suggest.autoImports":false,
+	"javascript.suggest.enabled":false,
+	"javascript.suggestionActions.enabled":false,
+"java.configuration.runtimes": [  
+  {
+    "name": "JavaSE-17",
+    "path": "/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home",
+    "default": true
+  },
+],
+	"go.goplsOptions": {
+		"completeUnimported": true
+	},
+	"languageserver": {
+    "go": {
+      "command": "gopls",
+      "rootPatterns": ["go.work", "go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    }
+  }
+}

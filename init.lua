@@ -1,0 +1,5 @@
+require('plugins')
+require('conf')
+require('settings')
+require('map')
+require('vars')
