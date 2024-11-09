@@ -35,6 +35,7 @@ return require('packer').startup(function()
 })
   end,
 	}
+	use 'tpope/vim-fugitive'
 	use 'terryma/vim-multiple-cursors'	
 	use {
   "microsoft/vscode-js-debug",
