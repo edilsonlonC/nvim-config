@@ -61,12 +61,21 @@ require('dapui').setup({
                 { id = 'breakpoints', size = 0.25 },
                 { id = 'stacks', size = 0.25 },
                 { id = 'repl', size = 0.25 },
+								{ id = 'watches', size = 0.25 },
             },
             size = 40,
             position = 'left',
-        },
+					},{
+						elements = {
+								{ id = 'console', size = 1, open_on_run = true, theme = 'dark' },
+						},
+						position = 'bottom',
+						size = 12
+					}
+
     },
 })
+
 
 require("dap-vscode-js").setup({
   -- node_path = "node", -- Path of node executable. Defaults to $NODE_PATH, and then "node"
@@ -93,7 +102,9 @@ for _, language in ipairs({ "typescript" }) do
 		skipFiles = { 'node_modules/**', 'dist/**' },
     cwd = "${workspaceFolder}",
 		protocol = "inspector",
-		console = "integratedTerminal"
+		console = "integratedTerminal",
+		stopOnEntry = true,
+		terminate = true,
   },
   {
     type = "pwa-node",
@@ -103,4 +114,9 @@ for _, language in ipairs({ "typescript" }) do
     cwd = "${workspaceFolder}/src",
   }
 }
+
 end
+
+
+
+

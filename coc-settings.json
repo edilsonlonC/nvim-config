@@ -12,6 +12,8 @@
 	"typescript.validate.enable":false,
 	"typescript.suggest.paths":false,
 	"javascript.showUnused":false,
+ "tsserver.preferences.importModuleSpecifier": "non-relative",
+  "tsserver.includePackageJsonAutoImports": true,
 	"javascript.suggest.paths":false,
 	"javascript.suggest.autoImports":false,
 	"javascript.suggest.enabled":false,
