@@ -6,14 +6,14 @@ return require('packer').startup(function()
 	use 'junegunn/fzf.vim'
 	use 'jiangmiao/auto-pairs'
 	use { 'neoclide/coc.nvim', branch = 'release' }
-	use 'ryanoasis/vim-devicons'
 	use 'vimlab/split-term.vim'
 	use 'navarasu/onedark.nvim'
 	use 'neovim/nvim-lspconfig'
 	use 'williamboman/mason.nvim' 
+	use 'nvim-tree/nvim-web-devicons'
 	use { "mxsdev/nvim-dap-vscode-js", requires = {"mfussenegger/nvim-dap"} }	
 	use "leoluz/nvim-dap-go"
-	use {
+		use {
   "supermaven-inc/supermaven-nvim",
   config = function()
     require("supermaven-nvim").setup({
@@ -50,7 +50,7 @@ return require('packer').startup(function()
 	use {
   'nvim-telescope/telescope.nvim', tag = '0.1.8',
 -- or                            , branch = '0.1.x',
-  requires = { {'nvim-lua/plenary.nvim'} }
+  requires = { {'nvim-lua/plenary.nvim'} , {'mfussenegger/nvim-dap'}}
 }
 
 use {'nvim-java/nvim-java', requires = {
@@ -63,6 +63,26 @@ use {'nvim-java/nvim-java', requires = {
 		'neovim/nvim-lspconfig',
 		'mfussenegger/nvim-dap'
 }}
+		use 'mfussenegger/nvim-jdtls'
 	 use 'JavaHello/spring-boot.nvim'
-
+	use {
+  "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    requires = { 
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    }
+  }
+ use 'stevearc/oil.nvim' 
+ use { "scottmckendry/cyberdream.nvim" }
+ use 'nvim-telescope/telescope-fzf-native.nvim'
+ use { 'echasnovski/mini.nvim', version = '*' }
+ use ({ 'projekt0n/github-nvim-theme' })
+ use { 'craftzdog/solarized-osaka.nvim'	 }
+ use { 'nvim-treesitter/nvim-treesitter' }
+use {
+    "williamboman/mason-lspconfig.nvim"
+}
 end)

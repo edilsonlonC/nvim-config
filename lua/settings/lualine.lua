@@ -1,8 +1,8 @@
 require('lualine').setup {
   options = {
-    icons_enabled = false,
+    icons_enabled = true,
     theme = 'auto',
-    component_separators = { left = '', right = ''},
+    component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {
       statusline = {},
@@ -17,13 +17,16 @@ require('lualine').setup {
       winbar = 1000,
     }
   },
-  sections = {
-    lualine_a = {'mode'},
+	sections = {
+
+		lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
+    lualine_x = {'fileformat', 'filetype'},
+    lualine_y = {
+			'buffers',	
+		},
+    lualine_z = {'location', 'datetime'}
   },
   inactive_sections = {
     lualine_a = {},
@@ -36,5 +39,5 @@ require('lualine').setup {
   tabline = {},
   winbar = {},
   inactive_winbar = {},
-  extensions = {}
+  extensions = {'fugitive'}
 }

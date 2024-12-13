@@ -12,3 +12,10 @@ require("mason").setup({
         }
     }
 })
+
+require('mason-lspconfig').setup({
+	ensure_installed = {
+		'jdtls',
+		'java_language_server',
+	},
+})

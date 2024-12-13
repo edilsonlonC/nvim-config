@@ -1,4 +1,12 @@
-require'lspconfig'.eslint.setup{
+require('java').setup({
+	verification = { invalid_mason_registry = false},
+	jdk = {
+		auto_install = false
+	}
+})
+local lspconfig  = require('lspconfig')
+
+lspconfig.eslint.setup{
 	on_attach = function(client, bufnr)
 		if client.server_capabilities.document_formatting then
 			client.server_capabilities.document_formatting = true
@@ -17,9 +25,16 @@ require'lspconfig'.eslint.setup{
 		packageManager = "npm"
 	}
 }
-require('lspconfig').ts_ls.setup({})
-require('lspconfig').gopls.setup({})
-require('lspconfig').jdtls.setup({
+
+local mason_registry = require('mason-registry')
+
+local jdtls_path = mason_registry.get_package('jdtls'):get_install_path()
+print(jdtls_path)
+lspconfig.ts_ls.setup({})
+lspconfig.gopls.setup({})
+lspconfig.jdtls.setup({
+cmd = { "/Users/edilson.londono/.local/share/nvim/mason/packages/jdtls/bin/jdtls" },
+	root_dir = lspconfig.util.root_pattern('build.gradle', 'settings.gradle', 'gradlew', 'pom.xml', '.git'),
 	settings = {
 		java = {
 			configuration = {
@@ -29,7 +44,8 @@ require('lspconfig').jdtls.setup({
 						path = "/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home",
 						default = true,
 					}
-				}
+				},
+				
 			}
 		}
 	}

@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
+  ["cyberdream.nvim"] = {
+    loaded = true,
+    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/cyberdream.nvim",
+    url = "https://github.com/scottmckendry/cyberdream.nvim"
+  },
   ["dracula.nvim"] = {
     loaded = true,
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/dracula.nvim",
@@ -99,6 +104,11 @@ _G.packer_plugins = {
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/fzf.vim",
     url = "https://github.com/junegunn/fzf.vim"
   },
+  ["github-nvim-theme"] = {
+    loaded = true,
+    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
+    url = "https://github.com/projekt0n/github-nvim-theme"
+  },
   ["lua-async-await"] = {
     loaded = true,
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/lua-async-await",
@@ -109,10 +119,25 @@ _G.packer_plugins = {
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
   ["mason.nvim"] = {
     loaded = true,
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["mini.nvim"] = {
+    loaded = true,
+    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/mini.nvim",
+    url = "https://github.com/echasnovski/mini.nvim"
+  },
+  ["neo-tree.nvim"] = {
+    loaded = true,
+    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
+    url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
   },
   nerdcommenter = {
     loaded = true,
@@ -174,6 +199,11 @@ _G.packer_plugins = {
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/nvim-java-test",
     url = "https://github.com/nvim-java/nvim-java-test"
   },
+  ["nvim-jdtls"] = {
+    loaded = true,
+    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/nvim-jdtls",
+    url = "https://github.com/mfussenegger/nvim-jdtls"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -184,11 +214,20 @@ _G.packer_plugins = {
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/nvim-nio",
     url = "https://github.com/nvim-neotest/nvim-nio"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
   ["nvim-web-devicons"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
+    loaded = true,
+    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
+  ["oil.nvim"] = {
+    loaded = true,
+    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/oil.nvim",
+    url = "https://github.com/stevearc/oil.nvim"
   },
   ["onedark.nvim"] = {
     loaded = true,
@@ -204,6 +243,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["solarized-osaka.nvim"] = {
+    loaded = true,
+    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/solarized-osaka.nvim",
+    url = "https://github.com/craftzdog/solarized-osaka.nvim"
   },
   ["split-term.vim"] = {
     loaded = true,
@@ -221,15 +265,20 @@ _G.packer_plugins = {
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/supermaven-nvim",
     url = "https://github.com/supermaven-inc/supermaven-nvim"
   },
+  ["telescope-fzf-native.nvim"] = {
+    loaded = true,
+    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["vim-devicons"] = {
+  ["vim-fugitive"] = {
     loaded = true,
-    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/vim-devicons",
-    url = "https://github.com/ryanoasis/vim-devicons"
+    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-multiple-cursors"] = {
     loaded = true,

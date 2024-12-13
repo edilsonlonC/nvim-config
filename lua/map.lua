@@ -1,5 +1,5 @@
 local builtin = require('telescope.builtin')
-
+vim.g.mapleader = " "
 vim.cmd('map <F2> :NERDTreeToggle <CR>')
 -- moving into tabs
 vim.cmd([[
@@ -37,6 +37,14 @@ vim.api.nvim_set_keymap('n', 'gd', '<Plug>(coc-definition)', {silent = true, nor
 vim.api.nvim_set_keymap('n', 'gy', '<Plug>(coc-type-definition)', {silent = true, noremap = true})
 vim.api.nvim_set_keymap('n', 'gi', '<Plug>(coc-implementation)', {silent = true, noremap = true})
 vim.api.nvim_set_keymap('n', 'gr', '<Plug>(coc-references)', {silent = true, noremap = true})
+vim.api.nvim_set_keymap('n', '<Leader>vs', ":vsplit<CR>", {silent = true, noremap = true})
+-- oil
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+-- neo-tree
+vim.keymap.set('n', '<leader>nf', ':Neotree<CR>')
+vim.keymap.set('n', '<leader>bn', ':bn<CR>')
+vim.keymap.set('n', '<leader>bd', ':bd<CR>')
 
 vim.cmd([[
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
@@ -44,3 +52,4 @@ autocmd FileType go nmap gtj :CocCommand go.tags.add json<cr>
 autocmd FileType go nmap gty :CocCommand go.tags.add yaml<cr>
 autocmd FileType go nmap gtx :CocCommand go.tags.clear<cr>
 ]])
+
