@@ -12,19 +12,10 @@
 	"typescript.validate.enable":false,
 	"typescript.suggest.paths":false,
 	"javascript.showUnused":false,
- "tsserver.preferences.importModuleSpecifier": "non-relative",
-  "tsserver.includePackageJsonAutoImports": true,
 	"javascript.suggest.paths":false,
 	"javascript.suggest.autoImports":false,
 	"javascript.suggest.enabled":false,
 	"javascript.suggestionActions.enabled":false,
-"java.configuration.runtimes": [  
-  {
-    "name": "JavaSE-17",
-    "path": "/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home",
-    "default": true
-  },
-],
 	"go.goplsOptions": {
 		"completeUnimported": true
 	},
@@ -36,6 +27,7 @@
       "initializationOptions": {
         "usePlaceholders": true
       }
-    }
+    }	
   }
+	
 }

@@ -5,7 +5,6 @@ return require('packer').startup(function()
 	use { 'junegunn/fzf', run = './install --bin' } 
 	use 'junegunn/fzf.vim'
 	use 'jiangmiao/auto-pairs'
-	use { 'neoclide/coc.nvim', branch = 'release' }
 	use 'vimlab/split-term.vim'
 	use 'navarasu/onedark.nvim'
 	use 'neovim/nvim-lspconfig'
@@ -53,18 +52,9 @@ return require('packer').startup(function()
   requires = { {'nvim-lua/plenary.nvim'} , {'mfussenegger/nvim-dap'}}
 }
 
-use {'nvim-java/nvim-java', requires = {
-    'nvim-java/lua-async-await',
-		'nvim-java/nvim-java-refactor',
-		'nvim-java/nvim-java-core',
-		'nvim-java/nvim-java-test',
-		'nvim-java/nvim-java-dap',
-		'MunifTanjim/nui.nvim',
-		'neovim/nvim-lspconfig',
-		'mfussenegger/nvim-dap'
-}}
+
 		use 'mfussenegger/nvim-jdtls'
-	 use 'JavaHello/spring-boot.nvim'
+	 --use 'JavaHello/spring-boot.nvim'
 	use {
   "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
@@ -83,6 +73,14 @@ use {'nvim-java/nvim-java', requires = {
  use { 'craftzdog/solarized-osaka.nvim'	 }
  use { 'nvim-treesitter/nvim-treesitter' }
 use {
-    "williamboman/mason-lspconfig.nvim"
-}
+    "williamboman/mason-lspconfig.nvim"}
+use { "neovim/nvim-lspconfig" }
+  use 'hrsh7th/nvim-cmp'                -- nvim-cmp, autocompletado
+  use 'hrsh7th/cmp-nvim-lsp'            -- Soporte LSP para nvim-cmp
+  use 'hrsh7th/cmp-buffer'              -- Completado basado en el buffer
+  use 'hrsh7th/cmp-path'                -- Completado basado en el sistema de archivos
+  use 'hrsh7th/cmp-cmdline'             -- Completado en la línea de comandos
+  
+  -- LSP y Java
+  use 'neovim/nvim-lspconfig'           -- Configuración de LSP
 end)

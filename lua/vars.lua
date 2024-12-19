@@ -1,9 +1,9 @@
 vim.g.split_terminal_default_shell = 'zsh'
-vim.g.coc_node_path = '/Users/edilson.londono/.nvm/versions/node/v20.17.0/bin/node'
-vim.g.coc_global_extensions = { 'coc-tsserver', 'coc-prettier', 'coc-git', 'coc-json', 'coc-java' }
-vim.cmd([[
-inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
-]])
+--vim.g.coc_node_path = '/Users/edilson.londono/.nvm/versions/node/v20.17.0/bin/node'
+--vim.g.coc_global_extensions = { 'coc-tsserver', 'coc-prettier', 'coc-git', 'coc-json' }
+--vim.cmd([[
+--inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+--]])
 vim.cmd([[
 let g:airline_powerline_fonts = 1
 ]])

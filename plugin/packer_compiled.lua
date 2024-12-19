@@ -79,10 +79,25 @@ _G.packer_plugins = {
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/auto-pairs",
     url = "https://github.com/jiangmiao/auto-pairs"
   },
-  ["coc.nvim"] = {
+  ["cmp-buffer"] = {
     loaded = true,
-    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/coc.nvim",
-    url = "https://github.com/neoclide/coc.nvim"
+    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
+  ["cmp-cmdline"] = {
+    loaded = true,
+    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
   },
   ["cyberdream.nvim"] = {
     loaded = true,
@@ -108,11 +123,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
     url = "https://github.com/projekt0n/github-nvim-theme"
-  },
-  ["lua-async-await"] = {
-    loaded = true,
-    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/lua-async-await",
-    url = "https://github.com/nvim-java/lua-async-await"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -154,6 +164,11 @@ _G.packer_plugins = {
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/nui.nvim",
     url = "https://github.com/MunifTanjim/nui.nvim"
   },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
+  },
   ["nvim-dap"] = {
     loaded = true,
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/nvim-dap",
@@ -173,31 +188,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/nvim-dap-vscode-js",
     url = "https://github.com/mxsdev/nvim-dap-vscode-js"
-  },
-  ["nvim-java"] = {
-    loaded = true,
-    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/nvim-java",
-    url = "https://github.com/nvim-java/nvim-java"
-  },
-  ["nvim-java-core"] = {
-    loaded = true,
-    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/nvim-java-core",
-    url = "https://github.com/nvim-java/nvim-java-core"
-  },
-  ["nvim-java-dap"] = {
-    loaded = true,
-    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/nvim-java-dap",
-    url = "https://github.com/nvim-java/nvim-java-dap"
-  },
-  ["nvim-java-refactor"] = {
-    loaded = true,
-    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/nvim-java-refactor",
-    url = "https://github.com/nvim-java/nvim-java-refactor"
-  },
-  ["nvim-java-test"] = {
-    loaded = true,
-    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/nvim-java-test",
-    url = "https://github.com/nvim-java/nvim-java-test"
   },
   ["nvim-jdtls"] = {
     loaded = true,
@@ -253,11 +243,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/split-term.vim",
     url = "https://github.com/vimlab/split-term.vim"
-  },
-  ["spring-boot.nvim"] = {
-    loaded = true,
-    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/spring-boot.nvim",
-    url = "https://github.com/JavaHello/spring-boot.nvim"
   },
   ["supermaven-nvim"] = {
     config = { "\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20supermaven-nvim\frequire\0" },
