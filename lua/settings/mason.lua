@@ -3,6 +3,7 @@ local registries = {
 	"github:mason-org/mason-registry"
 }
 require("mason").setup({
+	log_level = vim.log.levels.OFF,
 		registries = registries,
     ui = {
         icons = {
@@ -16,8 +17,5 @@ require("mason").setup({
 require('mason-lspconfig').setup({
 	ensure_installed = {
 		'jdtls',
-		'java-language-server',
-		'java-debug-adapter',
-		'java-test'
 	},
 })

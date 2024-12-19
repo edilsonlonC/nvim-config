@@ -33,7 +33,6 @@ set encoding=UTF-8
 --]])
 
 vim.cmd([[
-
 colorscheme cyberdream
 ]])
 --require('onedark').setup {
@@ -49,5 +48,4 @@ vim.cmd [[
   autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx lua vim.lsp.buf.format()
 
 ]] 
-
 
