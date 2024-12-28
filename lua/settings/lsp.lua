@@ -13,7 +13,7 @@ settings = {
         ["https://json.schemastore.org/kubernetes"] = "k8s/*.yaml", -- Kubernetes
         ["https://json.schemastore.org/github-workflow"] = ".github/workflows/*", -- GitHub Actions
         -- Agregar más esquemas si es necesario
-      }
+      },
       validate = true,  -- Habilitar validación
       hover = true,     -- Habilitar información al pasar el ratón
       completion = true,  -- Habilitar autocompletado
