@@ -31,7 +31,7 @@ local config = {
     '-Dlog.protocol=true',
     '-Dlog.level=ALL',
     '-Xms1g',
-    '-javaagent:/Users/edilson.londono/Projects/lombok.jar',
+    '-javaagent:/Users/edilson.londono/.m2/repository/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar',
     '--add-modules=ALL-SYSTEM',
     '--add-opens', 
 		'java.base/java.util=ALL-UNNAMED',
@@ -46,6 +46,12 @@ local config = {
 
   settings = {
     java = {
+			format = {
+				settings = {
+					url = '/Users/edilson.londono/Projects/eclipse-java-google-style.xml',
+					profile = 'GoogleStyle',
+			}
+		},
 			eclipse = {
 				downloadSources = true,
 			},
@@ -101,60 +107,21 @@ completion = {
   },
 	init_options = {
 		bundles = bundles,
-	},
-	--on_attach = function(client, bufnr)
-	---- Regular Neovim LSP client keymappings
-	--local bufopts = { noremap=true, silent=true, buffer=bufnr }
-	--nnoremap('gD', vim.lsp.buf.declaration, bufopts, "Go to declaration")
-	--nnoremap('gd', vim.lsp.buf.definition, bufopts, "Go to definition")
-	--nnoremap('gi', vim.lsp.buf.implementation, bufopts, "Go to implementation")
-	--nnoremap('K', vim.lsp.buf.hover, bufopts, "Hover text")
-	--nnoremap('<C-k>', vim.lsp.buf.signature_help, bufopts, "Show signature")
-	--nnoremap('<space>wa', vim.lsp.buf.add_workspace_folder, bufopts, "Add workspace folder")
-	--nnoremap('<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts, "Remove workspace folder")
-	--nnoremap('<space>wl', function()
-		--print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-	--end, bufopts, "List workspace folders")
-	--nnoremap('<space>D', vim.lsp.buf.type_definition, bufopts, "Go to type definition")
-	--nnoremap('<space>rn', vim.lsp.buf.rename, bufopts, "Rename")
-	--nnoremap('<space>ca', vim.lsp.buf.code_action, bufopts, "Code actions")
-	--vim.keymap.set('v', "<space>ca", "<ESC><CMD>lua vim.lsp.buf.range_code_action()<CR>",
-		--{ noremap=true, silent=true, buffer=bufnr, desc = "Code actions" })
-	--nnoremap('<space>f', function() vim.lsp.buf.format { async = true } end, bufopts, "Format file")
-
-	---- Java extensions provided by jdtls
-	--nnoremap("<C-o>", jdtls.organize_imports, bufopts, "Organize imports")
-	--nnoremap("<space>ev", jdtls.extract_variable, bufopts, "Extract variable")
-	--nnoremap("<space>ec", jdtls.extract_constant, bufopts, "Extract constant")
-	--vim.keymap.set('v', "<space>em", [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]],
-		--{ noremap=true, silent=true, buffer=bufnr, desc = "Extract method" })
---end
-
-
-  -- Función on_attach
-  --on_attach = function(client, bufnr)
-    --require'keymaps'.map_java_keys(bufnr)
-    --require "lsp_signature".on_attach({
-      --bind = true, -- Esto es obligatorio, de lo contrario la configuración del borde no se registrará
-      --floating_window_above_cur_line = false,
-      --padding = '',
-      --handler_opts = {
-        --border = "rounded",
-      --},
-    --}, bufnr)
-  --end,
+	}	
 }
 
 
+
+vim.cmd [[autocmd BufWritePre *.java lua vim.lsp.buf.format()]]
+
 config['on_attach'] = function(client, bufnr)
-  -- With `hotcodereplace = 'auto' the debug adapter will try to apply code changes
-  -- you make during a debug session immediately.
-  -- Remove the option if you do not want that.
+  
   require('jdtls').setup_dap({ hotcodereplace = 'auto' })
 end
---require('dap.ext.vscode').load_launchjs()
 
 -- Ahora intentamos iniciar o adjuntar el servidor
 --require('jdtls.setup').add_commands()
 require('jdtls').start_or_attach(config)
+
+
 

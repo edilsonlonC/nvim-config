@@ -104,6 +104,14 @@ _G.packer_plugins = {
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/cyberdream.nvim",
     url = "https://github.com/scottmckendry/cyberdream.nvim"
   },
+  ["dashboard-nvim"] = {
+    config = { "\27LJ\2\nã\3\0\0\6\0\r\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0034\4\5\0005\5\a\0>\5\1\0045\5\b\0>\5\2\0045\5\t\0>\5\3\0045\5\n\0>\5\4\4=\4\v\3=\3\f\2B\0\2\1K\0\1\0\vconfig\rshortcut\1\0\4\tdesc\17î¬© dotfiles\vaction\23Telescope dotfiles\ngroup\vNumber\bkey\6d\1\0\4\tdesc\rï€• Apps\vaction\18Telescope app\ngroup\19DiagnosticHint\bkey\6a\1\0\6\ngroup\nLabel\ticon\tîˆ• \bkey\6f\vaction\25Telescope find_files\tdesc\nFiles\ficon_hl\14@variable\1\0\4\tdesc\16ó°Š³ Update\vaction\16Lazy update\ngroup\14@property\bkey\6u\16week_header\1\0\2\16week_header\0\rshortcut\0\1\0\1\venable\2\1\0\2\ntheme\nhyper\vconfig\0\nsetup\14dashboard\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/opt/dashboard-nvim",
+    url = "https://github.com/nvimdev/dashboard-nvim"
+  },
   ["dracula.nvim"] = {
     loaded = true,
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/dracula.nvim",
@@ -123,6 +131,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
     url = "https://github.com/projekt0n/github-nvim-theme"
+  },
+  harpoon = {
+    loaded = true,
+    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -204,6 +217,11 @@ _G.packer_plugins = {
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/nvim-nio",
     url = "https://github.com/nvim-neotest/nvim-nio"
   },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -244,6 +262,12 @@ _G.packer_plugins = {
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/split-term.vim",
     url = "https://github.com/vimlab/split-term.vim"
   },
+  ["springboot-nvim"] = {
+    config = { "\27LJ\2\n¨\3\0\0\a\0\19\0'6\0\0\0'\2\1\0B\0\2\0026\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\6\0009\5\a\0005\6\b\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\t\0009\5\n\0005\6\v\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\f\0009\5\r\0005\6\14\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\15\0009\5\16\0005\6\17\0B\1\5\0019\1\18\0004\3\0\0B\1\2\1K\0\1\0\nsetup\1\0\1\tdesc\21Java Create Enum\18generate_enum\15<leader>Je\1\0\1\tdesc\26Java Create Interface\23generate_interface\15<leader>ji\1\0\1\tdesc\22Java Create Class\19generate_class\15<leader>jc\1\0\1\tdesc\28Spring Boot Run Project\rboot_run\15<leader>jr\6n\bset\vkeymap\bvim\20springboot-nvim\frequire\0" },
+    loaded = true,
+    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/springboot-nvim",
+    url = "https://github.com/elmcgill/springboot-nvim"
+  },
   ["supermaven-nvim"] = {
     config = { "\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20supermaven-nvim\frequire\0" },
     loaded = true,
@@ -279,10 +303,21 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: springboot-nvim
+time([[Config for springboot-nvim]], true)
+try_loadstring("\27LJ\2\n¨\3\0\0\a\0\19\0'6\0\0\0'\2\1\0B\0\2\0026\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\6\0009\5\a\0005\6\b\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\t\0009\5\n\0005\6\v\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\f\0009\5\r\0005\6\14\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\15\0009\5\16\0005\6\17\0B\1\5\0019\1\18\0004\3\0\0B\1\2\1K\0\1\0\nsetup\1\0\1\tdesc\21Java Create Enum\18generate_enum\15<leader>Je\1\0\1\tdesc\26Java Create Interface\23generate_interface\15<leader>ji\1\0\1\tdesc\22Java Create Class\19generate_class\15<leader>jc\1\0\1\tdesc\28Spring Boot Run Project\rboot_run\15<leader>jr\6n\bset\vkeymap\bvim\20springboot-nvim\frequire\0", "config", "springboot-nvim")
+time([[Config for springboot-nvim]], false)
 -- Config for: supermaven-nvim
 time([[Config for supermaven-nvim]], true)
 try_loadstring("\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20supermaven-nvim\frequire\0", "config", "supermaven-nvim")
 time([[Config for supermaven-nvim]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'dashboard-nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

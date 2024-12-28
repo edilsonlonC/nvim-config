@@ -43,6 +43,8 @@ vim.api.nvim_set_keymap('n', 'gi', '<Cmd>lua vim.lsp.buf.implementation()<CR>', 
 -- oil
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
+-- java
+vim.keymap.set('n', '<leader>ii', '<Cmd>lua vim.lsp.buf.code_action()<CR>' )
 -- neo-tree
 vim.keymap.set('n', '<leader>nf', ':Neotree<CR>')
 vim.keymap.set('n', '<leader>bn', ':bn<CR>')

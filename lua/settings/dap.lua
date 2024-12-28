@@ -2,21 +2,6 @@ local dap = require('dap')
 local dapgo = require('dap-go')
 local port = 8000
 
---java 
---dap.adapters.java = {
-	--type = 'server',
-	--host = '127.0.0.1',
-	--port = port,
---}
-
---dap.adapters.java = function(callback)
-	--callback({
-		--type = 'server',
-		--host = '127.0.0.1',
-		--port = 5005,
-	--})
---end
-
 dap.configurations.java = {
 	{
 		type = 'java',

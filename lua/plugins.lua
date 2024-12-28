@@ -42,6 +42,12 @@ return require('packer').startup(function()
   run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out" 
 }
 	use 'preservim/nerdcommenter'
+	use "nvim-lua/plenary.nvim"
+	use {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    requires = { {"nvim-lua/plenary.nvim"} }
+}
 	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
 	use {
   'nvim-lualine/lualine.nvim',
@@ -83,4 +89,57 @@ use { "neovim/nvim-lspconfig" }
   
   -- LSP y Java
   use 'neovim/nvim-lspconfig'           -- Configuración de LSP
+use {
+  'nvimdev/dashboard-nvim',
+  event = 'VimEnter',
+  config = function()
+    require('dashboard').setup({
+    theme = 'hyper',
+    config = {
+      week_header = {
+       enable = true,
+      },
+      shortcut = {
+        { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
+        {
+          icon = ' ',
+          icon_hl = '@variable',
+          desc = 'Files',
+          group = 'Label',
+          action = 'Telescope find_files',
+          key = 'f',
+        },
+        {
+          desc = ' Apps',
+          group = 'DiagnosticHint',
+          action = 'Telescope app',
+          key = 'a',
+        },
+        {
+          desc = ' dotfiles',
+          group = 'Number',
+          action = 'Telescope dotfiles',
+          key = 'd',
+        },
+      },
+    },
+  })  end,
+  requires = {'nvim-tree/nvim-web-devicons'}
+}
+use {
+		"elmcgill/springboot-nvim",
+		requires = {
+				"neovim/nvim-lspconfig",
+				"mfussenegger/nvim-jdtls",
+				"nvim-tree/nvim-tree.lua",
+		},
+		config = function()
+				local springboot_nvim = require("springboot-nvim")
+				vim.keymap.set('n', '<leader>jr', springboot_nvim.boot_run, {desc = "Spring Boot Run Project"})
+				vim.keymap.set('n', '<leader>jc', springboot_nvim.generate_class, {desc = "Java Create Class"})
+				vim.keymap.set('n', '<leader>ji', springboot_nvim.generate_interface, {desc = "Java Create Interface"})
+				vim.keymap.set('n', '<leader>Je', springboot_nvim.generate_enum, {desc = "Java Create Enum"})
+				springboot_nvim.setup({})
+		end
+}
 end)
