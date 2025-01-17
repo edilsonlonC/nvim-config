@@ -142,4 +142,8 @@ use {
 				springboot_nvim.setup({})
 		end
 }
+use({
+    "aserowy/tmux.nvim",
+    config = function() return require("tmux").setup() end
+})
 end)

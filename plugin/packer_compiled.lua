@@ -105,7 +105,7 @@ _G.packer_plugins = {
     url = "https://github.com/scottmckendry/cyberdream.nvim"
   },
   ["dashboard-nvim"] = {
-    config = { "\27LJ\2\n�\3\0\0\6\0\r\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0034\4\5\0005\5\a\0>\5\1\0045\5\b\0>\5\2\0045\5\t\0>\5\3\0045\5\n\0>\5\4\4=\4\v\3=\3\f\2B\0\2\1K\0\1\0\vconfig\rshortcut\1\0\4\tdesc\17 dotfiles\vaction\23Telescope dotfiles\ngroup\vNumber\bkey\6d\1\0\4\tdesc\r Apps\vaction\18Telescope app\ngroup\19DiagnosticHint\bkey\6a\1\0\6\ngroup\nLabel\ticon\t \bkey\6f\vaction\25Telescope find_files\tdesc\nFiles\ficon_hl\14@variable\1\0\4\tdesc\16󰊳 Update\vaction\16Lazy update\ngroup\14@property\bkey\6u\16week_header\1\0\2\16week_header\0\rshortcut\0\1\0\1\venable\2\1\0\2\ntheme\nhyper\vconfig\0\nsetup\14dashboard\frequire\0" },
+    config = { "\27LJ\2\n�\3\0\0\6\0\r\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0034\4\5\0005\5\a\0>\5\1\0045\5\b\0>\5\2\0045\5\t\0>\5\3\0045\5\n\0>\5\4\4=\4\v\3=\3\f\2B\0\2\1K\0\1\0\vconfig\rshortcut\1\0\4\ngroup\vNumber\bkey\6d\tdesc\17 dotfiles\vaction\23Telescope dotfiles\1\0\4\ngroup\19DiagnosticHint\bkey\6a\tdesc\r Apps\vaction\18Telescope app\1\0\6\tdesc\nFiles\ficon_hl\14@variable\ticon\t \ngroup\nLabel\bkey\6f\vaction\25Telescope find_files\1\0\4\ngroup\14@property\bkey\6u\tdesc\16󰊳 Update\vaction\16Lazy update\16week_header\1\0\2\16week_header\0\rshortcut\0\1\0\1\venable\2\1\0\2\ntheme\nhyper\vconfig\0\nsetup\14dashboard\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -284,6 +284,12 @@ _G.packer_plugins = {
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["tmux.nvim"] = {
+    config = { "\27LJ\2\n.\0\0\3\0\3\0\0056\0\0\0'\2\1\0B\0\2\0029\0\2\0D\0\1\0\nsetup\ttmux\frequire\0" },
+    loaded = true,
+    path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/tmux.nvim",
+    url = "https://github.com/aserowy/tmux.nvim"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/edilson.londono/.local/share/nvim/site/pack/packer/start/vim-fugitive",
@@ -303,14 +309,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: springboot-nvim
-time([[Config for springboot-nvim]], true)
-try_loadstring("\27LJ\2\n�\3\0\0\a\0\19\0'6\0\0\0'\2\1\0B\0\2\0026\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\6\0009\5\a\0005\6\b\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\t\0009\5\n\0005\6\v\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\f\0009\5\r\0005\6\14\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\15\0009\5\16\0005\6\17\0B\1\5\0019\1\18\0004\3\0\0B\1\2\1K\0\1\0\nsetup\1\0\1\tdesc\21Java Create Enum\18generate_enum\15<leader>Je\1\0\1\tdesc\26Java Create Interface\23generate_interface\15<leader>ji\1\0\1\tdesc\22Java Create Class\19generate_class\15<leader>jc\1\0\1\tdesc\28Spring Boot Run Project\rboot_run\15<leader>jr\6n\bset\vkeymap\bvim\20springboot-nvim\frequire\0", "config", "springboot-nvim")
-time([[Config for springboot-nvim]], false)
 -- Config for: supermaven-nvim
 time([[Config for supermaven-nvim]], true)
 try_loadstring("\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20supermaven-nvim\frequire\0", "config", "supermaven-nvim")
 time([[Config for supermaven-nvim]], false)
+-- Config for: tmux.nvim
+time([[Config for tmux.nvim]], true)
+try_loadstring("\27LJ\2\n.\0\0\3\0\3\0\0056\0\0\0'\2\1\0B\0\2\0029\0\2\0D\0\1\0\nsetup\ttmux\frequire\0", "config", "tmux.nvim")
+time([[Config for tmux.nvim]], false)
+-- Config for: springboot-nvim
+time([[Config for springboot-nvim]], true)
+try_loadstring("\27LJ\2\n�\3\0\0\a\0\19\0'6\0\0\0'\2\1\0B\0\2\0026\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\6\0009\5\a\0005\6\b\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\t\0009\5\n\0005\6\v\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\f\0009\5\r\0005\6\14\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\15\0009\5\16\0005\6\17\0B\1\5\0019\1\18\0004\3\0\0B\1\2\1K\0\1\0\nsetup\1\0\1\tdesc\21Java Create Enum\18generate_enum\15<leader>Je\1\0\1\tdesc\26Java Create Interface\23generate_interface\15<leader>ji\1\0\1\tdesc\22Java Create Class\19generate_class\15<leader>jc\1\0\1\tdesc\28Spring Boot Run Project\rboot_run\15<leader>jr\6n\bset\vkeymap\bvim\20springboot-nvim\frequire\0", "config", "springboot-nvim")
+time([[Config for springboot-nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads

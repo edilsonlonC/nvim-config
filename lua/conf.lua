@@ -26,6 +26,10 @@ set autoread
 set guifont=HackNerdFontMono-Regular:h11
 "set guifont=IsovkaNerdFontMono-Regular:h11
 set encoding=UTF-8
+set lazyredraw    " Evita redibujar la pantalla innecesariamente
+set noswapfile    " Desactiva los archivos swap
+set noundofile    " Desactiva el archivo de deshacer
+
 ]])
 
 --vim.cmd([[
@@ -45,7 +49,7 @@ colorscheme cyberdream
 --require('onedark').load()
 vim.cmd [[ 
  
-  autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx lua vim.lsp.buf.format()
+	autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx lua vim.lsp.buf.format()
 
 ]] 
 
