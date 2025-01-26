@@ -3,12 +3,12 @@ if (has("termguicolors"))
 	set termguicolors
 endif
 set title "show name file in terminal
-set number
+set relativenumber
 set mouse=a
 
 set cursorline
 set colorcolumn=120
-set relativenumber
+set number 
 set showcmd
 "identar
 set tabstop=2
@@ -23,13 +23,12 @@ set splitright
 set clipboard=unnamedplus
  " trigger `autoread` when files changes on disk
 set autoread
-set guifont=HackNerdFontMono-Regular:h11
-"set guifont=IsovkaNerdFontMono-Regular:h11
+"set guifont=Hack Nerd Font Mono-Regular:h11
 set encoding=UTF-8
 set lazyredraw    " Evita redibujar la pantalla innecesariamente
 set noswapfile    " Desactiva los archivos swap
 set noundofile    " Desactiva el archivo de deshacer
-
+set clipboard+=unnamedplus
 ]])
 
 --vim.cmd([[
@@ -47,6 +46,8 @@ colorscheme cyberdream
 
 --}
 --require('onedark').load()
+vim.opt.guifont = "DroidSansMNerdFont Mono:h12"
+
 vim.cmd [[ 
  
 	autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx lua vim.lsp.buf.format()

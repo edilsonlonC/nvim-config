@@ -1,16 +1,8 @@
 local dap = require('dap')
 local dapgo = require('dap-go')
 local port = 8000
+local mason_registry = require("mason-registry")
 
-dap.configurations.java = {
-	{
-		type = 'java',
-		request = 'attach',
-		name = 'Debug (attach) - remote',
-		hostName  = '127.0.0.1',
-		port = port,
-	}
-}
 require('dap-go').setup {
   -- Additional dap configurations can be added.
   -- dap_configurations accepts a list of tables where each entry
@@ -64,6 +56,8 @@ require('dap-go').setup {
     verbose = false,
   },
 }
+
+
 require('dapui').setup({
     layouts = {
         {
@@ -87,18 +81,18 @@ require('dapui').setup({
     },
 })
 
-
-require("dap-vscode-js").setup({
-  -- node_path = "node", -- Path of node executable. Defaults to $NODE_PATH, and then "node"
-  -- debugger_path = "(runtimedir)/site/pack/packer/opt/vscode-js-debug", -- Path to vscode-js-debug installation.
-  -- debugger_cmd = { "js-debug-adapter" }, -- Command to use to launch the debug server. Takes precedence over `node_path` and `debugger_path`.
-  adapters = { 'pwa-node' }, -- which adapters to register in nvim-dap
-  -- log_file_path = "(stdpath cache)/dap_vscode_js.log" -- Path for file logging
-  -- log_file_level = false -- Logging level for output to file. Set to false to disable file logging.
-  -- log_console_level = vim.log.levels.ERROR -- Logging level for output to console. Set to false to disable console output.
-})
-
-
+local js_debug_path = mason_registry.get_package("js-debug-adapter"):get_install_path()
+local complete_js_debug_path = js_debug_path .. "/js-debug/src/dapDebugServer.js"
+require("dap").adapters["pwa-node"] = {
+  type = "server",
+  host = "localhost",
+  port = "${port}",
+  executable = {
+    command = "node",
+    -- 💀 Make sure to update this path to point to your installation
+		args = { complete_js_debug_path,  "${port}" },
+  }
+}
 for _, language in ipairs({ "typescript" }) do
   require("dap").configurations[language] = {
   {
@@ -111,6 +105,7 @@ for _, language in ipairs({ "typescript" }) do
 		args = { "run", "start:dev"},
 		sourceMaps = true,
 		skipFiles = { 'node_modules/**', 'dist/**' },
+		port = '${port}',
     cwd = "${workspaceFolder}",
 		protocol = "inspector",
 		console = "integratedTerminal",
