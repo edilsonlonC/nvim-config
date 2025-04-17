@@ -29,14 +29,21 @@ set lazyredraw    " Evita redibujar la pantalla innecesariamente
 set noswapfile    " Desactiva los archivos swap
 set noundofile    " Desactiva el archivo de deshacer
 set clipboard+=unnamedplus
+set nowrap
 ]])
 
 --vim.cmd([[
 --colorscheme github_dark_high_contrast 
 --]])
-
+--
 vim.cmd([[
-colorscheme cyberdream
+set termguicolors
+]])
+vim.opt.termguicolors = true
+vim.cmd([[
+
+colorscheme cyberdream 
+
 ]])
 --require('onedark').setup {
 	--style = 'deep',
@@ -53,4 +60,7 @@ vim.cmd [[
 	autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx lua vim.lsp.buf.format()
 
 ]] 
+
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
 

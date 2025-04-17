@@ -38,6 +38,7 @@ vim.keymap.set('n', '<Leader>dl', function() require('dap').run_last() end)
 --vim.api.nvim_set_keymap('n', 'gi', '<Plug>(coc-implementation)', {silent = true, noremap = true})
 --vim.api.nvim_set_keymap('n', 'gr', '<Plug>(coc-references)', {silent = true, noremap = true})
 vim.api.nvim_set_keymap('n', '<Leader>vs', ":vsplit<CR>", {silent = true, noremap = true})
+vim.api.nvim_set_keymap('n', '<Leader>hs', ":split<CR>", {silent = true, noremap = true})
 vim.api.nvim_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'gi', '<Cmd>lua vim.lsp.buf.implementation()<CR>', { noremap = true, silent = true })
 -- oil
@@ -56,4 +57,9 @@ vim.keymap.set('n', '<leader>bd', ':bd<CR>')
 --autocmd FileType go nmap gty :CocCommand go.tags.add yaml<cr>
 --autocmd FileType go nmap gtx :CocCommand go.tags.clear<cr>
 --]])
+
+
+
+
+
 

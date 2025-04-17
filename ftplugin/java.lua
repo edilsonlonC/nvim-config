@@ -5,12 +5,11 @@ if not jdtls_ok then
 end
 
 local jdtls_path = vim.fn.stdpath('data') .. '/mason/packages/jdtls' 
-local path_to_config = jdtls_path .. '/config_mac'
+local path_to_config = jdtls_path .. '/config_linux'
 local path_to_plugins = jdtls_path .. '/plugins'
-local path_to_jar = path_to_plugins .. '/org.eclipse.equinox.launcher_1.6.900.v20240613-2009.jar'
+local path_to_jar = path_to_plugins .. '/org.eclipse.equinox.launcher.jar'
 local root_markers = {'build.gradle', 'settings.gradle', 'gradlew', 'pom.xml' }
 local root_dir = vim.fs.root(0, {".git", "mvnw", "gradlew"})
-
 if root_dir == "" then
   return
 end
@@ -18,21 +17,28 @@ local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 local workspace_dir = vim.fn.stdpath('data') .. '/site/java/workspace-root/' .. project_name
 local home = os.getenv("HOME")
 local lombok_path = home .. '/.m2/repository/org/projectlombok/lombok/1.18.34/lombok-1.18.34.jar'
-local bundles = {
-	vim.fn.glob('/Users/edilson.londono/.m2/repository/com/microsoft/java/com.microsoft.java.debug.plugin/0.53.1/com.microsoft.java.debug.plugin-*.jar')
-}
+
+local bundles = {}
+local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
+vim.list_extend(bundles, vim.split(vim.fn.glob(mason_path .. "packages/java-test/extension/server/*.jar"), "\n"))
+vim.list_extend(
+  bundles,
+  vim.split(
+    vim.fn.glob(mason_path .. "packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar"),
+    "\n"
+  )
+)
 
 local config = {
   cmd = {
-    '/Users/edilson.londono/Library/Java/JavaVirtualMachines/corretto-21.0.5/Contents/Home/bin/java',
+    '/usr/bin/java',
     '-Declipse.application=org.eclipse.jdt.ls.core.id1',
     '-Dosgi.bundles.defaultStartLevel=4',
     '-Declipse.product=org.eclipse.jdt.ls.core.product',
     '-Dlog.protocol=true',
     '-Dlog.level=ALL',
     '-Xms1g',
-    '-javaagent:/Users/edilson.londono/.m2/repository/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar',
-    '--add-modules=ALL-SYSTEM',
+    '-javaagent:/home/eddylson/.config/lombok/lombok.jar',--add-modules=ALL-SYSTEM',
     '--add-opens', 
 		'java.base/java.util=ALL-UNNAMED',
     '--add-opens', 
@@ -48,8 +54,6 @@ local config = {
     java = {
 			format = {
 				settings = {
-					url = '/Users/edilson.londono/Projects/eclipse-java-google-style.xml',
-					profile = 'GoogleStyle',
 			}
 		},
 			eclipse = {
@@ -98,7 +102,7 @@ completion = {
         runtimes = {
           {
             name = "JavaSE-21",
-            path = "/Users/edilson.londono/Library/Java/JavaVirtualMachines/corretto-21.0.5/Contents/Home",
+            path = "/usr/lib/jvm/java-21-openjdk-amd64",
             default = true,
           },
         },
@@ -114,13 +118,10 @@ completion = {
 
 vim.cmd [[autocmd BufWritePre *.java lua vim.lsp.buf.format()]]
 
-config['on_attach'] = function(client, bufnr)
-  
+config['on_attach'] = function(client, bufnr) 
   require('jdtls').setup_dap({ hotcodereplace = 'auto' })
 end
-
--- Ahora intentamos iniciar o adjuntar el servidor
---require('jdtls.setup').add_commands()
+-- start server jdls
 require('jdtls').start_or_attach(config)
 
 

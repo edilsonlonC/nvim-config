@@ -18,8 +18,8 @@ require("cyberdream").setup({
     cache = true,
 
     theme = {
-        variant = "auto", -- use "light" for the light variant. Also accepts "auto" to set dark or light colors based on the current value of `vim.o.background`
-        saturation = 1, -- accepts a value between 0 and 1. 0 will be fully desaturated (greyscale) and 1 will be the full color (default)
+        variant = "dark", -- can be light or dark
+        saturation = 0, -- accepts a value between 0 and 1. 0 will be fully desaturated (greyscale) and 1 will be the full color (default)
         highlights = {
             -- Highlight groups to override, adding new groups is also possible
             -- See `:h highlight-groups` for a list of highlight groups or run `:hi` to see all groups and their current values
@@ -50,5 +50,9 @@ require("cyberdream").setup({
     },
 
     -- Disable or enable colorscheme extensions
-    
-})
+		extensions = {
+			telescope = true,
+			notify = true,
+			mini = true,
+		}
+	})

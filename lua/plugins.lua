@@ -142,8 +142,16 @@ use {
 				springboot_nvim.setup({})
 		end
 }
-use({
+	use({
     "aserowy/tmux.nvim",
-    config = function() return require("tmux").setup() end
+		config = function() return require("tmux").setup() end
 })
+	use 'christoomey/vim-tmux-navigator'
+use 'xiyaowong/transparent.nvim'
+use "folke/tokyonight.nvim"
+ use {
+    'nvimtools/none-ls.nvim', -- sucesor de null-ls
+    requires = { 'nvim-lua/plenary.nvim' },
+  }
+
 end)

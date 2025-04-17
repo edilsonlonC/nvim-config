@@ -105,7 +105,7 @@ _G.packer_plugins = {
     url = "https://github.com/scottmckendry/cyberdream.nvim"
   },
   ["dashboard-nvim"] = {
-    config = { "\27LJ\2\n�\3\0\0\6\0\r\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0034\4\5\0005\5\a\0>\5\1\0045\5\b\0>\5\2\0045\5\t\0>\5\3\0045\5\n\0>\5\4\4=\4\v\3=\3\f\2B\0\2\1K\0\1\0\vconfig\rshortcut\1\0\4\bkey\6d\vaction\23Telescope dotfiles\ngroup\vNumber\tdesc\17 dotfiles\1\0\4\bkey\6a\vaction\18Telescope app\ngroup\19DiagnosticHint\tdesc\r Apps\1\0\6\bkey\6f\ngroup\nLabel\vaction\25Telescope find_files\ficon_hl\14@variable\ticon\t \tdesc\nFiles\1\0\4\bkey\6u\vaction\16Lazy update\ngroup\14@property\tdesc\16󰊳 Update\16week_header\1\0\2\rshortcut\0\16week_header\0\1\0\1\venable\2\1\0\2\vconfig\0\ntheme\nhyper\nsetup\14dashboard\frequire\0" },
+    config = { "\27LJ\2\n�\3\0\0\6\0\r\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0034\4\5\0005\5\a\0>\5\1\0045\5\b\0>\5\2\0045\5\t\0>\5\3\0045\5\n\0>\5\4\4=\4\v\3=\3\f\2B\0\2\1K\0\1\0\vconfig\rshortcut\1\0\4\ngroup\vNumber\tdesc\17 dotfiles\vaction\23Telescope dotfiles\bkey\6d\1\0\4\ngroup\19DiagnosticHint\tdesc\r Apps\vaction\18Telescope app\bkey\6a\1\0\6\ticon\t \vaction\25Telescope find_files\tdesc\nFiles\ficon_hl\14@variable\ngroup\nLabel\bkey\6f\1\0\4\ngroup\14@property\tdesc\16󰊳 Update\vaction\16Lazy update\bkey\6u\16week_header\1\0\2\16week_header\0\rshortcut\0\1\0\1\venable\2\1\0\2\ntheme\nhyper\vconfig\0\nsetup\14dashboard\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -290,6 +290,16 @@ _G.packer_plugins = {
     path = "/home/eddylson/.local/share/nvim/site/pack/packer/start/tmux.nvim",
     url = "https://github.com/aserowy/tmux.nvim"
   },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/home/eddylson/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["transparent.nvim"] = {
+    loaded = true,
+    path = "/home/eddylson/.local/share/nvim/site/pack/packer/start/transparent.nvim",
+    url = "https://github.com/xiyaowong/transparent.nvim"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/eddylson/.local/share/nvim/site/pack/packer/start/vim-fugitive",
@@ -300,6 +310,11 @@ _G.packer_plugins = {
     path = "/home/eddylson/.local/share/nvim/site/pack/packer/start/vim-multiple-cursors",
     url = "https://github.com/terryma/vim-multiple-cursors"
   },
+  ["vim-tmux-navigator"] = {
+    loaded = true,
+    path = "/home/eddylson/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
+    url = "https://github.com/christoomey/vim-tmux-navigator"
+  },
   ["vscode-js-debug"] = {
     loaded = false,
     needs_bufread = false,
@@ -309,14 +324,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: springboot-nvim
-time([[Config for springboot-nvim]], true)
-try_loadstring("\27LJ\2\n�\3\0\0\a\0\19\0'6\0\0\0'\2\1\0B\0\2\0026\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\6\0009\5\a\0005\6\b\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\t\0009\5\n\0005\6\v\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\f\0009\5\r\0005\6\14\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\15\0009\5\16\0005\6\17\0B\1\5\0019\1\18\0004\3\0\0B\1\2\1K\0\1\0\nsetup\1\0\1\tdesc\21Java Create Enum\18generate_enum\15<leader>Je\1\0\1\tdesc\26Java Create Interface\23generate_interface\15<leader>ji\1\0\1\tdesc\22Java Create Class\19generate_class\15<leader>jc\1\0\1\tdesc\28Spring Boot Run Project\rboot_run\15<leader>jr\6n\bset\vkeymap\bvim\20springboot-nvim\frequire\0", "config", "springboot-nvim")
-time([[Config for springboot-nvim]], false)
 -- Config for: tmux.nvim
 time([[Config for tmux.nvim]], true)
 try_loadstring("\27LJ\2\n.\0\0\3\0\3\0\0056\0\0\0'\2\1\0B\0\2\0029\0\2\0D\0\1\0\nsetup\ttmux\frequire\0", "config", "tmux.nvim")
 time([[Config for tmux.nvim]], false)
+-- Config for: springboot-nvim
+time([[Config for springboot-nvim]], true)
+try_loadstring("\27LJ\2\n�\3\0\0\a\0\19\0'6\0\0\0'\2\1\0B\0\2\0026\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\6\0009\5\a\0005\6\b\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\t\0009\5\n\0005\6\v\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\f\0009\5\r\0005\6\14\0B\1\5\0016\1\2\0009\1\3\0019\1\4\1'\3\5\0'\4\15\0009\5\16\0005\6\17\0B\1\5\0019\1\18\0004\3\0\0B\1\2\1K\0\1\0\nsetup\1\0\1\tdesc\21Java Create Enum\18generate_enum\15<leader>Je\1\0\1\tdesc\26Java Create Interface\23generate_interface\15<leader>ji\1\0\1\tdesc\22Java Create Class\19generate_class\15<leader>jc\1\0\1\tdesc\28Spring Boot Run Project\rboot_run\15<leader>jr\6n\bset\vkeymap\bvim\20springboot-nvim\frequire\0", "config", "springboot-nvim")
+time([[Config for springboot-nvim]], false)
 -- Config for: supermaven-nvim
 time([[Config for supermaven-nvim]], true)
 try_loadstring("\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20supermaven-nvim\frequire\0", "config", "supermaven-nvim")
