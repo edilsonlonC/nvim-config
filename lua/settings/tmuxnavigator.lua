@@ -1,9 +1,13 @@
 vim.cmd[[
-let g:tmux_navigator_no_mappings = 1
-
-nnoremap <silent> {Left-Mapping} :<C-U>TmuxNavigateLeft<cr>
-nnoremap <silent> {Down-Mapping} :<C-U>TmuxNavigateDown<cr>
-nnoremap <silent> {Up-Mapping} :<C-U>TmuxNavigateUp<cr>
-nnoremap <silent> {Right-Mapping} :<C-U>TmuxNavigateRight<cr>
-nnoremap <silent> {Previous-Mapping} :<C-U>TmuxNavigatePrevious<cr>
+nnoremap <silent> <C-h> <Cmd>NvimTmuxNavigateLeft<CR>
+nnoremap <silent> <C-j> <Cmd>NvimTmuxNavigateDown<CR>
+nnoremap <silent> <C-k> <Cmd>NvimTmuxNavigateUp<CR>
+nnoremap <silent> <C-l> <Cmd>NvimTmuxNavigateRight<CR>
+nnoremap <silent> <C-\> <Cmd>NvimTmuxNavigateLastActive<CR>
+nnoremap <silent> <C-Space> <Cmd>NvimTmuxNavigateNext<CR>
 ]]
+
+
+require'nvim-tmux-navigation'.setup {
+    disable_when_zoomed = true -- defaults to false
+}

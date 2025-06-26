@@ -15,11 +15,14 @@ cmp.setup({
     ['<CR>']  = cmp.mapping.confirm({ select = true }),
     ['<C-Space>'] = cmp.mapping.complete(),
   },
-  sources = {
-    { name = 'nvim_lsp' },         -- Fuente LSP
-    { name = 'buffer' },           -- Fuente basada en el buffer
-    { name = 'path' },             -- Fuente basada en el sistema de archivos
-    { name = 'cmdline' },          -- Fuente para la línea de comandos
-  },
+  sources = cmp.config.sources({
+      { name = 'nvim_lsp' },
+      { name = 'vsnip' }, -- For vsnip users.
+      -- { name = 'luasnip' }, -- For luasnip users.
+      -- { name = 'ultisnips' }, -- For ultisnips users.
+      -- { name = 'snippy' }, -- For snippy users.
+    }, {
+      { name = 'buffer' },
+    })
 })
 

@@ -3,6 +3,7 @@ local null_ls = require("null-ls")
 
 null_ls.setup({
   sources = {
+
 		null_ls.builtins.diagnostics.golangci_lint,
 		null_ls.builtins.formatting.goimports,
 		null_ls.builtins.formatting.gofumpt,
@@ -42,11 +43,11 @@ null_ls.setup({
     if client.supports_method("textDocument/formatting") then
 			print('supports_method')
       vim.api.nvim_clear_autocmds({
-        group = augroup,
+        --group = augroup,
         buffer = bufnr,
       })
       vim.api.nvim_create_autocmd("BufWritePre", {
-        group = augroup,
+        --group = augroup,
         buffer = bufnr,
         callback = function()
           vim.lsp.buf.format({ bufnr = bufnr })

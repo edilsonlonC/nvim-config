@@ -87,6 +87,8 @@ use { "neovim/nvim-lspconfig" }
   use 'hrsh7th/cmp-path'                -- Completado basado en el sistema de archivos
   use 'hrsh7th/cmp-cmdline'             -- Completado en la línea de comandos
   
+
+
   -- LSP y Java
   use 'neovim/nvim-lspconfig'           -- Configuración de LSP
 use {
@@ -126,6 +128,7 @@ use {
   })  end,
   requires = {'nvim-tree/nvim-web-devicons'}
 }
+
 use {
 		"elmcgill/springboot-nvim",
 		requires = {
@@ -133,6 +136,10 @@ use {
 				"mfussenegger/nvim-jdtls",
 				"nvim-tree/nvim-tree.lua",
 		},
+cond = function()
+    -- Solo cargar el plugin si estamos en un proyecto Spring Boot (Maven o Gradle)
+    return vim.fn.filereadable("pom.xml") == 1 or vim.fn.filereadable("build.gradle") == 1
+  end,
 		config = function()
 				local springboot_nvim = require("springboot-nvim")
 				vim.keymap.set('n', '<leader>jr', springboot_nvim.boot_run, {desc = "Spring Boot Run Project"})
@@ -142,12 +149,26 @@ use {
 				springboot_nvim.setup({})
 		end
 }
-	use({
-    "aserowy/tmux.nvim",
-		config = function() return require("tmux").setup() end
-})
-	use 'christoomey/vim-tmux-navigator'
-use 'xiyaowong/transparent.nvim'
+
+use {
+  'alexghergh/nvim-tmux-navigation',
+  config = function()
+    local nvim_tmux_nav = require('nvim-tmux-navigation')
+    nvim_tmux_nav.setup {
+      disable_when_zoomed = false -- defaults to false
+    }
+    vim.keymap.set('n', "<C-h>", nvim_tmux_nav.NvimTmuxNavigateLeft)
+    vim.keymap.set('n', "<C-j>", nvim_tmux_nav.NvimTmuxNavigateDown)
+    vim.keymap.set('n', "<C-k>", nvim_tmux_nav.NvimTmuxNavigateUp)
+    vim.keymap.set('n', "<C-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
+    vim.keymap.set('n', "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
+    vim.keymap.set('n', "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
+  end
+}
+
+	--use 'christoomey/vim-tmux-navigator'
+--
+--use 'xiyaowong/transparent.nvim'
 use "folke/tokyonight.nvim"
  use {
     'nvimtools/none-ls.nvim', -- sucesor de null-ls

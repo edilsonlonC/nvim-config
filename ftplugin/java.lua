@@ -116,7 +116,38 @@ completion = {
 
 
 
-vim.cmd [[autocmd BufWritePre *.java lua vim.lsp.buf.format()]]
+--vim.cmd [[autocmd BufWritePre *.java lua vim.lsp.buf.format()]]
+
+-- Cierra automáticamente la ventana quickfix si se abre después de guardar
+--vim.api.nvim_create_autocmd("BufWritePost", {
+  --callback = function()
+    --for _, win in ipairs(vim.fn.getwininfo()) do
+      --if win.quickfix == 1 then
+        --vim.cmd("cclose")
+        --return
+      --end
+    --end
+  --end,
+--})
+
+
+
+-- Cierra la quickfix si se abre después de guardar un archivo Java
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "qf",
+  callback = function()
+    local buftype = vim.api.nvim_buf_get_option(0, "buftype")
+    if buftype == "quickfix" then
+      -- Espera unos milisegundos para evitar conflictos y la cierra
+      vim.defer_fn(function()
+        vim.cmd("cclose")
+      end, 100)
+    end
+  end
+})
+
+
+-- En ftplugin/java.lua
 
 config['on_attach'] = function(client, bufnr) 
   require('jdtls').setup_dap({ hotcodereplace = 'auto' })

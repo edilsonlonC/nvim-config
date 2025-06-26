@@ -1,7 +1,3 @@
-local dap = require('dap')
-local dapgo = require('dap-go')
-local port = 8000
-local mason_registry = require("mason-registry")
 
 require('dap-go').setup {
   -- Additional dap configurations can be added.
@@ -81,7 +77,8 @@ require('dapui').setup({
     },
 })
 
-local js_debug_path = mason_registry.get_package("js-debug-adapter"):get_install_path()
+--local js_debug_path = mason_registry.get_package("js-debug-adapter")
+local js_debug_path = '/home/eddylson/.local/share/nvim/mason/packages'
 local complete_js_debug_path = js_debug_path .. "/js-debug/src/dapDebugServer.js"
 require("dap").adapters["pwa-node"] = {
   type = "server",

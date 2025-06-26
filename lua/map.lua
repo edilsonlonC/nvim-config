@@ -44,6 +44,11 @@ vim.api.nvim_set_keymap('n', 'gi', '<Cmd>lua vim.lsp.buf.implementation()<CR>', 
 -- oil
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
+vim.api.nvim_create_autocmd("BufWritePre", {
+	callback = function()
+		vim.lsp.buf.format()
+	end,
+})
 -- java
 vim.keymap.set('n', '<leader>ii', '<Cmd>lua vim.lsp.buf.code_action()<CR>' )
 -- neo-tree
